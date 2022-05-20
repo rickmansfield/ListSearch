@@ -28,16 +28,46 @@ namespace ListSearch
             "Please tell me more."
         };
 
+        //static void Main(string[] args)
+        //{
+        //    //                  0123456789
+        //    string userInput = "I think I need to learn C#";
+        //    string output = "";
+
+        //    for (int index = 0; index < matches.Count; index++)
+        //    {
+        //        string match = matches[index];
+        //        int position = userInput.ToLower().IndexOf(match);
+        //        if (position > -1)
+        //        {
+        //            // found a match
+        //            output = responses[index];
+        //            break;
+        //        }
+        //    }
+
+        //    // If there wasn't a match, use the last item in the responses list.
+        //    if (output == "")
+        //    {
+        //        output = responses[responses.Count - 1];
+        //    }
+
+        //    Console.WriteLine(output);
+        //}
+
+        //===============Sec 9 Video 126========================
+
         static void Main(string[] args)
         {
             //                  0123456789
             string userInput = "I think I need to learn C#";
             string output = "";
+            string lowercaseInput = userInput.ToLower();
 
             for (int index = 0; index < matches.Count; index++)
             {
                 string match = matches[index];
-                int position = userInput.ToLower().IndexOf(match);
+                int position = lowercaseInput.IndexOf(match);
                 if (position > -1)
                 {
                     // found a match
