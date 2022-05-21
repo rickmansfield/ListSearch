@@ -58,30 +58,27 @@ namespace ListSearch
         //===============Sec 9 Video 126========================
 
         static void Main(string[] args)
-        {
-            //                  0123456789
-            string userInput = "I think I need to learn C#";
+        {                               //10's      20's      30's
+            //                  01234567890123456789012345678901234
+            string userInput = "I think I need to learn C# sorry";
             string output = "";
             string lowercaseInput = userInput.ToLower();
 
-            for (int index = 0; index < matches.Count; index++)
+            for (int index = 0; index < matches.Count; index++)// loops through the matches list
             {
-                string match = matches[index];
-                int position = lowercaseInput.IndexOf(match);
-                if (position > -1)
+                string match = matches[index];// gets the current match. i.e. sets match to the current index in the matches list
+                int position = lowercaseInput.IndexOf(match);// finds the position of the match in the lowercaseInput string. i.e. checks if the index VALUE of one string is in the other string. 
+                if (position > -1)// if the position is greater than -1 a match is found
                 {
-                    // found a match
-                    output = responses[index];
-                    break;
+                    output = responses[index];// sets the output to the current response
+                    break;// breaks out of the loop
                 }
             }
-
             // If there wasn't a match, use the last item in the responses list.
-            if (output == "")
+            if (output == "")// if the output is empty
             {
-                output = responses[responses.Count - 1];
+                output = responses[responses.Count - 1];// sets the output to the last item in the responses list
             }
-
             Console.WriteLine(output);
         }
     }
