@@ -6,26 +6,26 @@ namespace ListSearch
     class Program
     {
         static List<string> matches = new List<string> {
-                                                    "life",
-                                                    "i need",
-                                                    "why don't",
-                                                    "i can",
-                                                    "are you",
-                                                    "what",
-                                                    "because",
-                                                    "sorry"
+                                                    "life",//1
+                                                    "i need",//2
+                                                    "why don't",//3
+                                                    "i can",//4
+                                                    "are you",//5
+                                                    "what",//6
+                                                    "because",//7
+                                                    "sorry"//8
                                                 };
 
         static List<string> responses = new List<string> {
-            "Life? Don't talk to me about life.",
-            "Why do you need %1?",
-            "Do you really think I don't %1?",
-            "How do you know you can't %1?",
-            "Why does it matter whether I am %1?",
-            "Why do you ask?",
-            "Is that the real reason?",
-            "There are many times when no apology is needed.",
-            "Please tell me more."
+            "Life? Don't talk to me about life.",//1
+            "Why do you need %1?",//2
+            "Do you really think I don't %1?",//3
+            "How do you know you can't %1?",//4
+            "Why does it matter whether I am %1?",//5
+            "Why do you ask?",//6
+            "Is that the real reason?",//7
+            "There are many times when no apology is needed.",//8
+            "Please tell me more."//9
         };
 
         //static void Main(string[] args)
@@ -60,17 +60,17 @@ namespace ListSearch
         static void Main(string[] args)
         {                               //10's      20's      30's
             //                  01234567890123456789012345678901234
-            string userInput = "I think I need to learn C# sorry";
+            string userInput = "I think why I need to learn C# sorry";
             string output = "";
             string lowercaseInput = userInput.ToLower();
 
             for (int index = 0; index < matches.Count; index++)// loops through the matches list
             {
-                string match = matches[index];// gets the current match. i.e. sets match to the current index in the matches list
+                string match = matches[index];// gets the current match. i.e. sets match to the current index integer in the matches list
                 int position = lowercaseInput.IndexOf(match);// finds the position of the match in the lowercaseInput string. i.e. checks if the index VALUE of one string is in the other string. 
                 if (position > -1)// if the position is greater than -1 a match is found
                 {
-                    output = responses[index];// sets the output to the current response
+                    output = responses[index];// sets the output to the current response with the same index integer
                     break;// breaks out of the loop
                 }
             }
@@ -81,5 +81,6 @@ namespace ListSearch
             }
             Console.WriteLine(output);
         }
+
     }
 }
